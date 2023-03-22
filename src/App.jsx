@@ -1,13 +1,15 @@
 import { useState } from "react";
+import API from "./components/API";
+import bg1 from "./assets/bg1.jpg";
 
 import "./App.css";
 import CallingAPI from "./components/CallingAPI";
 
 function App() {
   return (
-    <div className="App">
-      <h2>Heldlo</h2>
-      <CallingAPI />
+    <div>
+      {/* <CallingAPI /> */}
+      <API />
     </div>
   );
 }
