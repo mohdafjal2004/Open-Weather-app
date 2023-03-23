@@ -1,13 +1,12 @@
 import { useState } from "react";
 import API from "./components/API";
-import bg1 from "./assets/bg1.jpg";
 
 import "./App.css";
 import CallingAPI from "./components/CallingAPI";
 
 function App() {
   return (
-    <div>
+    <div >
       {/* <CallingAPI /> */}
       <API />
     </div>
