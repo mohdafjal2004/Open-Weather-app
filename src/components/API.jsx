@@ -4,7 +4,7 @@ import dayIcon from "../assets/clear-day.svg";
 import nightIcon from "../assets/clear-night.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/API.css";
-import img from '../assets/strart.svg'
+import img from "../assets/strart.svg";
 
 const API = () => {
   const [api, setApi] = useState([]);
@@ -43,81 +43,86 @@ const API = () => {
   console.log(iconCode);
 
   return (
-    <div
-      className={`container-fluid px-1 px-md-4 py-5 mx-auto ${
-        isDay ? "bg-d" : "bg-n"
-      }`}
-    >
-      <form onSubmit={handleSubmit} className="card">
-        <input
-          type="text"
-          value={city}
-          onChange={handleInput}
-          className="search"
-          placeholder="Enter your City, State/Country or Pin code"
-        />
-        <br />
-        {api.length == 0 ? (
-          <div>
-            <img src={img} alt="" height={130} />
-
-            <div>
-              Enter your city name to get the latest weather information
-            </div>
-          </div>
-        ) : (
-          <div>
-            <div>
-              <h2 className="ml-auto mr-4 mt-3 mb-0">
-                {api.name}, {api.sys && api.sys.country}
-              </h2>
-
-              <img src={isDay ? dayIcon : nightIcon} height={50} />
-            </div>
-
-            <div className="icontemp">
-              <div className="icon">
-                <img
-                  className="icon1"
-                  src={`https://openweathermap.org/img/wn/${iconCode}.png`}
-                  alt="Weather Icon"
-                  height={100}
-                />
-
-                <h3 className="icon3">{api.weather[0].main}</h3>
-              </div>
+    <div className="API__body">
+      <div className={`API_container ${isDay ? "bg-d" : "bg-n"}`}>
+        <form onSubmit={handleSubmit} className="card">
+          <span className="headline">Weather App</span>
+          <input
+            type="text"
+            value={city}
+            onChange={handleInput}
+            className="search"
+            placeholder="Enter your City, State/Country or Pin code"
+          />
+          <br />
+          {api.length == 0 ? (
+            <div className="start_details">
+              <img src={img} alt="" className="start_icon" />
 
               <div>
-                <h1 className="temp">{tempcelsius}°C</h1>
+                Enter your city name to get the latest weather information
               </div>
             </div>
-            <div className="info">
-              <h5 className="infodeep">
-                Description {api.weather[0].description}
-              </h5>
+          ) : (
+            <div>
+              <div className="city_details">
+                <h2 className="city_name">
+                  {api.name}, {api.sys && api.sys.country}
+                </h2>
 
-              <h5 className="infodeep">
-                <span>Pressure </span>
-                <span>{api && api.main && api.main.pressure}</span> hPa
-              </h5>
-              <h5 className="infodeep">
-                <span>Humidity</span>
-                <span> {api && api.main && api.main.humidity} %</span>
-              </h5>
+                <img src={isDay ? dayIcon : nightIcon} className="day_night" />
+              </div>
 
-              <h5 className="infodeep">
-                <span>Wind</span>
-                <span>{api.wind && api.wind.speed}</span> km/hr
-              </h5>
+              <div className="weather__temp">
+                <div className="weather_main">
+                  <img
+                    className="weather_icon"
+                    src={`https://openweathermap.org/img/wn/${iconCode}.png`}
+                    alt="Weather Icon"
+                  />
+
+                  <h3 className="main">{api.weather[0].main}</h3>
+                </div>
+                <h1 className="temp">{tempcelsius}°C</h1>
+              </div>
+              <div className="info">
+                <h5 className="infodeep">
+                  <span className="info_head">Description </span>
+                  <span className="info_details">
+                    {api.weather[0].description}
+                  </span>
+                </h5>
+
+                <h5 className="infodeep">
+                  <span className="info_head">Pressure </span>
+                  <span className="info_details">
+                    {api && api.main && api.main.pressure} hPa
+                  </span>
+                </h5>
+                <h5 className="infodeep">
+                  <span className="info_head">Humidity</span>
+                  <span className="info_details">
+                    {" "}
+                    {api && api.main && api.main.humidity} %
+                  </span>
+                </h5>
+
+                <h5 className="infodeep">
+                  <span className="info_head">Wind</span>
+                  <span className="info_details">
+                    {api.wind && api.wind.speed} km/hr
+                  </span>
+                </h5>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        <br />
-        <button type="submit" className="btn">
-          Get City Data
-        </button>
-      </form>
+          <br />
+          <button type="submit" className="btn">
+            Get City Data
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

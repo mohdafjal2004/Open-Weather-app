@@ -1,110 +1,262 @@
-body {
-  color: #fff;
-  overflow-x: hidden;
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+}
+.headline {
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 40px;
+}
+.API__body {
+  /* outline: 5px solid red; */
   width: 100vw;
-  background-color: #cfd8dc;
-  background-repeat: no-repeat;
-  background-position: cover;
-}
-
-.search{
-background-color: transparent;
-}
-
-.card {
-  background-size: cover;
-  width: 600px;
   height: auto;
-  border-radius: 20px;
-  box-shadow: 0px 8px 16px 4px #9e9e9e;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
-.bg-n {
-  background-image: url("../assets//bg3.jpg");
-  background-position: cover;
-}
-.bg-d {
-  background-image: url("../assets//bg.jpg");
+.API_container {
+  /* outline: 40px solid rgb(29, 224, 107); */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.time-font {
+.search::placeholder {
+  color: rgb(188, 193, 193);
+}
+
+.city_details {
+  outline: 2px solid rgb(252, 251, 251);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+  color: white;
+  background-color: rgba(190, 186, 186, 0.359);
+  border-radius: 10px;
+}
+
+.city_name {
   font-size: 50px;
 }
 
-.sm-font {
-  font-size: 18px;
+.day_night {
+  width: 40%;
+}
+.card {
+  background-size: cover;
+  width: 80vw;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px 2px #9e9e9e;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+  outline: 2px solid rgb(252, 251, 251);
 }
 
-.med-font {
-  font-size: 28px;
+.bg-n {
+  background-image: url("../assets//bg-night.jpg");
+  background-size: cover;
+}
+.bg-d {
+  background-image: url("../assets/bg-day.jpg");
+  background-size: cover;
 }
 
-.large-font {
-  font-size: 60px;
+.search {
+  padding: 10px 10px;
+  color: white;
+  padding-left: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 2px #9e9e9e;
+  outline: 2px solid rgb(252, 251, 251);
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+}
+
+.start_details {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-shadow: 0px 3px 10px 2px #9e9e9e;
+  outline: 2px solid rgb(252, 251, 251);
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.start_icon {
+  height: 150px;
+}
+.weather__temp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  box-shadow: 0px 3px 10px 2px #9e9e9e;
+  outline: 2px solid rgb(252, 251, 251);
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.weather_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather_icon {
+  height: 150px;
+}
+
+.main {
+  color: white;
+  font-size: 35px;
+}
+
+.temp {
+  color: rgb(245, 239, 239);
+  padding-top: 55px;
+  font-size: 40px;
+  text-shadow: 2px 3px 2px red;
+}
+.info {
+  display: flex;
+  margin-top: 100px;
+
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  /* outline: 2px solid red; */
+}
+
+.infodeep {
+  width: 100%;
+
+  display: flex;
+  box-shadow: 0px 3px 10px 2px #9e9e9e;
+  outline: 2px solid rgb(252, 251, 251);
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+  text-align: center;
+  flex-direction: column;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.info_head {
+  outline: 2px solid rgb(252, 251, 251);
+  backdrop-filter: blur(5px);
+  background-color: rgba(128, 128, 128, 0.595);
+  padding: 0 10px;
+}
+.info_details {
+  padding: 10px 2px;
+  font-size: large;
 }
 .btn {
   margin-top: 2px;
   background-color: black;
   color: white;
+  font-size: large;
 }
-
-.search {
-  color: white;
-  padding-left: 8px;
-  border-radius: 10px;
-}
-.icon {
-  position: relative;
-  display: flex;
-  width: 33%;
-  margin: 0px 20px;
-}
-
-.icon1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.icon2 {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-}
-
-.icon3 {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  z-index: 2;
+.btn:hover {
+  outline: 2px solid rgb(252, 251, 251);
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+  transition: all ease-in;
   color: white;
 }
-
-.icontemp {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 20px;
+@media (max-width: 720px) {
+  .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .infodeep {
+    margin: 2px 2px;
+  }
+  .info_head {
+    padding: 0;
+  }
+  .card {
+    height: 100vh;
+  }
 }
+@media (max-width: 520px) {
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  .infodeep {
+    margin: 10px 2px;
+  }
+  .city_name {
+    margin: 10px;
+    font-size: medium;
+  }
+  .card {
+    width: 90vw;
+    height: 100%;
+  }
+  .weather__temp {
+    display: flex;
+    flex-direction: column;
+  }
+  .temp {
+    margin-top: 20px;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+    outline: 2px solid rgb(238, 233, 233);
+    background-color: rgba(0, 0, 0, 0.255);
+  }
+  .API__body {
+    outline: 5px solid red;
+    width: 100vw;
+    height: auto;
+  }
 
-.info {
-  display: flex;
-  margin-top: 100px;
+  .API_container {
+    /* outline: 40px solid rgb(29, 224, 107); */
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
 }
+@media (max-width:849px){
+  .card {
+    width: 70vw;
+    height: auto;
+  }
+}
+@media (min-width: 850px) {
+  .card {
+    width: 50vw;
+    height: auto;
+    margin-top: 20px;
+  }
+  .API__body {
+    /* outline: 5px solid red; */
+    width: 100vw;
+    height: 160vh;
+  }
 
-.infodeep {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.temp {
-  top: 10px;
-  padding-top: 25px;
+  .API_container {
+    /* outline: 40px solid rgb(29, 224, 107); */
+    width: 100%;
+    height: 160vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
